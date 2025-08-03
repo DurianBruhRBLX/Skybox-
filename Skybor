@@ -1,0 +1,21 @@
+local Players = game:GetService("Players")
+local Lighting = game:GetService("Lighting")
+
+local player = Players.LocalPlayer
+repeat wait() until player and Lighting
+
+local oldSky = Lighting:FindFirstChildOfClass("Sky")
+if oldSky then oldSky:Destroy() end
+
+local sky = Instance.new("Sky")
+sky.Name = "CustomSkybox"
+
+local id = "rbxassetid://117768376628756"
+sky.SkyboxBk = 117768376628756
+sky.SkyboxDn = 117768376628756
+sky.SkyboxFt = 117768376628756
+sky.SkyboxLf = 117768376628756
+sky.SkyboxRt = 117768376628756
+sky.SkyboxUp = 117768376628756
+
+sky.Parent = Lighting
